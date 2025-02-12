@@ -1,4 +1,6 @@
 #!/bin/bash
-sudo docker stop final-python
-sudo docker rm final-python
 
+if [ "$(sudo docker ps -q -f name=final-python)" ]; then
+    sudo docker stop final-python
+    sudo docker rm final-python
+fi
