@@ -1,4 +1,7 @@
 #!/bin/bash
 sudo docker pull Emelloul98/final-python:latest
 
-sudo docker run -d -p 80:5000 --name final-python Emelloul98/final-python:latest
+sudo docker stop final-python || true
+sudo docker rm final-python || true
+
+sudo docker run -d -p 5000:5000 --name final-python Emelloul98/final-python:latest
